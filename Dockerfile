@@ -7,12 +7,12 @@
 # Pull base image.
 FROM dockerfile/java:oracle-java8
 
-ENV ES_PKG_NAME elasticsearch-1.5.0
+ENV ES_PKG_NAME elasticsearch-5.6.4
 
 # Install Elasticsearch.
 RUN \
   cd / && \
-  wget https://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz && \
+  wget https://artifacts.elastic.co/downloads/elasticsearch/$ES_PKG_NAME.tar.gz && \
   tar xvzf $ES_PKG_NAME.tar.gz && \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
